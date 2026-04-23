@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deeno Fire Protection — Long Island's Hood Cleaning & Fire Protection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F8F5EC;
+    --cream-dim: #EFEBDE;
+    --black: #1A1A1A;
+    --charcoal: #2B2B2B;
+    --red: #C8342B;
+    --red-dark: #A02820;
+    --yellow: #F5B800;
+    --grey: #6B6B6B;
+    --grey-light: #D8D3C4;
+    --line: #CDC7B5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--black);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.005em;
+  }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; }
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .container-sm { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+
+  a { color: inherit; }
+
+  /* ----- TOP BAR ----- */
+  .topbar {
+    background: var(--black);
+    color: var(--cream);
+    padding: 8px 0;
+    font-size: 13px;
+  }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .topbar-left {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .topbar-left::before { content: "●"; color: var(--red); margin-right: 8px; }
+  .topbar-right { display: flex; gap: 20px; align-items: center; font-size: 13px; }
+  .topbar-right a { text-decoration: none; color: var(--cream); }
+  .topbar-right .tel { font-weight: 700; font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
+  .topbar-right .emergency {
+    background: var(--red);
+    color: var(--cream);
+    padding: 4px 12px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 11px;
+    text-decoration: none;
+  }
+  .topbar-right .emergency:hover { background: var(--red-dark); }
+
+  /* ----- NAV ----- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--cream);
+    border-bottom: 3px solid var(--black);
+    padding: 14px 0;
+  }
+  nav .container { display: flex; align-items: center; justify-content: space-between; }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+    color: var(--black);
+  }
+  .brand-mark {
+    width: 42px; height: 42px;
+    background: var(--red);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cream);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .brand-mark::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(248, 245, 236, 0.4);
+  }
+  .brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .brand-name span { color: var(--red); }
+  .brand-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--grey);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 2px;
+    display: block;
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .btn-solid {
+    background: var(--red);
+    color: var(--cream) !important;
+    padding: 12px 22px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-solid:hover { background: var(--red-dark); }
+  .btn-outline {
+    background: transparent;
+    color: var(--cream) !important;
+    padding: 11px 22px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--cream);
+    transition: all 0.15s;
+  }
+  .btn-outline:hover { background: var(--cream); color: var(--black) !important; }
+  .btn-outline-dark {
+    background: transparent;
+    color: var(--black) !important;
+    padding: 11px 22px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--black);
+    transition: all 0.15s;
+  }
+  .btn-outline-dark:hover { background: var(--black); color: var(--cream) !important; }
+  @media (max-width: 860px) { .nav-links a:not(.btn-solid) { display: none; } }
+
+  /* ----- HERO ----- */
+  .hero {
+    position: relative;
+    background: var(--black);
+    color: var(--cream);
+    min-height: 620px;
+    padding: 80px 0 80px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(90deg, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.65) 55%, rgba(26,26,26,0.35) 100%),
+      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #0f0f0f 100%),
+      url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=2000');
+    background-size: cover;
+    background-position: center right;
+  }
+  .hero .container { position: relative; z-index: 1; width: 100%; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    font-weight: 500;
+  }
+  .hero-eyebrow::before {
+    content: "";
+    width: 32px; height: 2px;
+    background: var(--red);
+  }
+  h1.hero-title {
+    font-size: clamp(48px, 7vw, 96px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+    margin-bottom: 24px;
+    max-width: 900px;
+  }
+  h1.hero-title .red { color: var(--red); }
+  .hero-sub {
+    font-size: 19px;
+    color: #CFC9BA;
+    max-width: 560px;
+    margin-bottom: 36px;
+    line-height: 1.55;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-phone {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--yellow);
+    margin-left: 12px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .hero-phone::before { content: "☎ "; color: var(--red); }
+  .hero-badges {
+    position: absolute;
+    top: 32px; right: 32px;
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+  }
+  .hero-badge {
+    background: var(--cream);
+    color: var(--black);
+    padding: 8px 14px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-left: 4px solid var(--red);
+  }
+  @media (max-width: 760px) {
+    .hero-badges { display: none; }
+    .hero { min-height: auto; padding: 56px 0 56px; }
+  }
+
+  /* ----- TRUST BAND ----- */
+  .trust {
+    background: var(--black);
+    color: var(--cream);
+    padding: 20px 0;
+    border-top: 1px solid var(--charcoal);
+  }
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .trust-item::before {
+    content: "✓";
+    color: var(--red);
+    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ----- SECTIONS ----- */
+  section { padding: 88px 0; }
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 500;
+  }
+  .section-eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--red); }
+  h2 {
+    font-size: clamp(36px, 5vw, 58px);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  h2 .red { color: var(--red); }
+  .section-intro {
+    font-size: 18px;
+    color: var(--grey);
+    max-width: 640px;
+    margin-bottom: 48px;
+    line-height: 1.5;
+  }
+
+  /* ----- WHY US (6 BENEFITS GRID) ----- */
+  .why { background: var(--cream-dim); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 2px solid var(--black);
+    background: var(--black);
+  }
+  .why-card {
+    background: var(--cream);
+    padding: 36px 30px;
+    border-right: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .why-card:nth-child(3n) { border-right: none; }
+  .why-card:nth-last-child(-n+3) { border-bottom: none; }
+  .why-icon {
+    width: 48px; height: 48px;
+    background: var(--red);
+    color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .why-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+    color: var(--black);
+  }
+  .why-body { font-size: 15px; color: var(--grey); line-height: 1.5; }
+  @media (max-width: 860px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-card:nth-child(3n) { border-right: 2px solid var(--black); }
+    .why-card:nth-child(2n) { border-right: none; }
+    .why-card:nth-last-child(-n+3) { border-bottom: 2px solid var(--black); }
+    .why-card:nth-last-child(-n+2) { border-bottom: none; }
+  }
+  @media (max-width: 560px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .why-card { border-right: none !important; border-bottom: 2px solid var(--black) !important; }
+    .why-card:last-child { border-bottom: none !important; }
+  }
+
+  /* ----- SERVICES (4 CARDS WITH PHOTOS) ----- */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .svc-card {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .svc-card:hover { transform: translateY(-4px); }
+  .svc-img {
+    aspect-ratio: 4/3;
+    background-color: var(--charcoal);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-bottom: 2px solid var(--black);
+  }
+  .svc-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(26,26,26,0.3) 100%);
+  }
+  .svc-img .tag {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: var(--red);
+    color: var(--cream);
+    padding: 4px 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  .svc-body { padding: 24px 22px; flex: 1; display: flex; flex-direction: column; }
+  .svc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--grey);
+    margin-bottom: 6px;
+    letter-spacing: 0.1em;
+  }
+  .svc-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+    color: var(--black);
+  }
+  .svc-desc { font-size: 14px; color: var(--grey); flex: 1; line-height: 1.5; }
+
+  /* Image background swap per card */
+  .svc-1 .svc-img {
+    background-image:
+      linear-gradient(135deg, #3a2a1a 0%, #1a1a1a 100%),
+      url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800');
+    background-size: cover, cover;
+  }
+  .svc-2 .svc-img {
+    background-image:
+      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%),
+      url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800');
+    background-size: cover, cover;
+  }
+  .svc-3 .svc-img {
+    background-image:
+      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%),
+      url('https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800');
+    background-size: cover, cover;
+  }
+  .svc-4 .svc-img {
+    background-image:
+      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%),
+      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800');
+    background-size: cover, cover;
+  }
+
+  @media (max-width: 560px) { .svc-grid { grid-template-columns: 1fr; } }
+
+  /* What's Included block */
+  .includes-block {
+    max-width: 900px;
+    margin: 56px auto 0;
+    background: var(--black);
+    color: var(--cream);
+    padding: 44px 48px;
+    border: 2px solid var(--black);
+  }
+  .includes-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #3a3a3a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .includes-title::before {
+    content: "";
+    width: 28px; height: 2px;
+    background: var(--red);
+  }
+  .includes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 40px;
+  }
+  .include-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--cream);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .include-item::before {
+    content: "✓";
+    color: var(--red);
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    flex-shrink: 0;
+    width: 20px;
+  }
+  @media (max-width: 640px) {
+    .includes-block { padding: 32px 28px; }
+    .includes-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ----- SERVICE AREA (LI photo) ----- */
+  .area { background: var(--black); color: var(--cream); padding: 0; }
+  .area-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
+  .area-copy {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .area-copy .section-eyebrow { color: var(--yellow); }
+  .area-copy .section-eyebrow::before { background: var(--yellow); }
+  .area-copy h2 { color: var(--cream); }
+  .area-copy h2 .red { color: var(--red); }
+  .area-sub { font-size: 18px; color: #CFC9BA; max-width: 480px; margin-bottom: 32px; line-height: 1.5; }
+  .area-counties {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .area-county {
+    background: var(--red);
+    color: var(--cream);
+    padding: 8px 16px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .area-towns {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #CFC9BA;
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+  }
+  .area-towns span { color: var(--yellow); }
+
+  .area-photo {
+    background-image:
+      linear-gradient(180deg, rgba(26,26,26,0.1) 0%, rgba(26,26,26,0.4) 100%),
+      url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Long_Island_sat_cloudless.jpg/1280px-Long_Island_sat_cloudless.jpg'),
+      url('https://placehold.co/1200x800/1a1a1a/f5b800?text=LONG+ISLAND+AERIAL&font=oswald');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 500px;
+  }
+  .area-photo-label {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: rgba(26,26,26,0.75);
+    padding: 6px 12px;
+  }
+
+  @media (max-width: 860px) {
+    .area-inner { grid-template-columns: 1fr; }
+    .area-copy { padding: 56px 32px; }
+    .area-photo { min-height: 320px; }
+  }
+
+  /* ----- BEFORE / AFTER ----- */
+  .ba { padding-top: 88px; }
+  .ba-grid {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .ba-item {
+    border: 2px solid var(--black);
+    background: var(--cream);
+  }
+  .ba-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--black);
+    aspect-ratio: 16/9;
+  }
+  .ba-side {
+    position: relative;
+    overflow: hidden;
+  }
+  .ba-before {
+    background:
+      radial-gradient(circle at 30% 40%, #4a3220 0%, #2a1e14 60%, #1a1208 100%);
+  }
+  .ba-before::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 30px 50px at 25% 30%, rgba(0,0,0,0.7) 0%, transparent 55%),
+      radial-gradient(ellipse 45px 30px at 65% 55%, rgba(0,0,0,0.6) 0%, transparent 55%),
+      radial-gradient(ellipse 20px 35px at 45% 75%, rgba(0,0,0,0.5) 0%, transparent 55%),
+      radial-gradient(ellipse 35px 20px at 80% 25%, rgba(0,0,0,0.6) 0%, transparent 55%),
+      radial-gradient(ellipse 25px 40px at 15% 70%, rgba(0,0,0,0.5) 0%, transparent 55%);
+  }
+  .ba-after {
+    background:
+      linear-gradient(135deg, #C4BCA8 0%, #E8E2D0 45%, #A69D88 100%);
+  }
+  .ba-after::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 45%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0.35) 55%, transparent 100%),
+      repeating-linear-gradient(45deg, transparent 0 8px, rgba(0,0,0,0.04) 8px 9px);
+  }
+  .ba-label {
+    position: absolute;
+    top: 10px; left: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    z-index: 2;
+  }
+  .ba-label.bfr { background: var(--black); color: var(--yellow); }
+  .ba-label.aft { background: var(--red); color: var(--cream); }
+  .ba-caption {
+    padding: 16px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--black);
+    border-top: 2px solid var(--black);
+    background: var(--cream);
+    display: flex;
+    justify-content: space-between;
+  }
+  .ba-caption .loc { color: var(--red); }
+  .ba-note {
+    margin-top: 28px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  /* ----- TESTIMONIALS ----- */
+  .test { background: var(--cream-dim); }
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .test-card {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    padding: 36px 32px;
+    position: relative;
+  }
+  .test-stars {
+    color: var(--yellow);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .test-body {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--black);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  .test-body::before { content: "\" "; color: var(--red); font-weight: 700; }
+  .test-body::after { content: " \""; color: var(--red); font-weight: 700; }
+  .test-attr {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--grey);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .test-attr strong { color: var(--black); font-weight: 600; }
+  @media (max-width: 760px) { .test-grid { grid-template-columns: 1fr; } }
+
+  /* ----- FAQ ----- */
+  details.faq {
+    border-bottom: 2px solid var(--black);
+    padding: 22px 0;
+    cursor: pointer;
+  }
+  details.faq:first-of-type { border-top: 2px solid var(--black); margin-top: 24px; }
+  details.faq summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--black);
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary::after {
+    content: "+";
+    color: var(--red);
+    font-size: 24px;
+    font-weight: 700;
+  }
+  details.faq[open] summary::after { content: "−"; }
+  details.faq p {
+    margin-top: 12px;
+    color: var(--grey);
+    font-size: 15px;
+    max-width: 740px;
+    line-height: 1.55;
+  }
+
+  /* ----- FINAL CTA ----- */
+  .final {
+    background: var(--red);
+    color: var(--cream);
+    padding: 96px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final::before, .final::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 80px;
+    background-image: repeating-linear-gradient(45deg, var(--black) 0 20px, var(--yellow) 20px 40px);
+    opacity: 0.15;
+  }
+  .final::before { left: 0; }
+  .final::after { right: 0; }
+  .final-inner { position: relative; z-index: 1; }
+  .final .section-eyebrow { color: var(--yellow); }
+  .final .section-eyebrow::before { background: var(--yellow); }
+  .final h2 { color: var(--cream); font-size: clamp(40px, 6vw, 72px); margin-bottom: 20px; }
+  .final-sub {
+    font-size: 18px;
+    color: rgba(248, 245, 236, 0.9);
+    max-width: 620px;
+    margin: 0 auto 36px;
+    line-height: 1.5;
+  }
+  .final-ctas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-final-dark {
+    background: var(--black);
+    color: var(--cream) !important;
+    padding: 16px 28px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--black);
+  }
+  .btn-final-dark:hover { background: transparent; color: var(--black) !important; border-color: var(--cream); }
+  .btn-final-outline {
+    background: transparent;
+    color: var(--cream) !important;
+    padding: 14px 28px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--cream);
+  }
+  .btn-final-outline:hover { background: var(--cream); color: var(--black) !important; }
+
+  /* ----- FOOTER ----- */
+  footer {
+    background: var(--black);
+    color: #9A968A;
+    padding: 40px 0 48px;
+    font-size: 13px;
+    border-top: 4px solid var(--red);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 32px;
+  }
+  .foot-brand-block .brand-name { color: var(--cream); font-size: 28px; }
+  .foot-brand-block .brand-tag { color: var(--yellow); margin-top: 6px; font-size: 11px; }
+  .foot-brand-block p { color: #9A968A; margin-top: 14px; max-width: 320px; line-height: 1.5; }
+  .foot-col h4 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--cream);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .foot-col a { color: #9A968A; text-decoration: none; display: block; line-height: 1.9; }
+  .foot-col a:hover { color: var(--yellow); }
+  .foot-bottom {
+    border-top: 1px solid var(--charcoal);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: #6B6860;
+  }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
+
+  /* Reveal */
+  .fade-up { opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">Long Island's Premier Hood Cleaning Company</div>
+    <div class="topbar-right">
+      <a href="tel:+16315214302" class="tel">(631) 521-4302</a>
+      <a href="tel:+16315214302" class="emergency">24/7 Emergency</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="brand">
+      <div class="brand-mark">D</div>
+      <div>
+        <div class="brand-name">Deeno <span>Fire Protection</span></div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#area">Service Area</a>
+      <a href="#work">Our Work</a>
+      <a href="#faq">FAQ</a>
+      <a href="#quote" class="btn-solid">Free Estimate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-eyebrow">Serving Nassau & Suffolk</div>
+    <h1 class="hero-title">Hood Cleaning.<br><span class="red">Done Right.</span></h1>
+    <p class="hero-sub">Commercial hood cleaning and fire protection for Long Island restaurants. We clean to NFPA 96, document every job with photos and a signed report, and show up when we say we will.</p>
+    <div class="hero-ctas">
+      <a href="#quote" class="btn-solid">Get a free estimate</a>
+      <a href="tel:+16315214302" class="btn-outline">Call now</a>
+      <a href="tel:+16315214302" class="hero-phone">(631) 521-4302</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="container trust-row">
+    <div class="trust-item">NFPA 96 Compliant</div>
+    <div class="trust-item">Trained Techs</div>
+    <div class="trust-item">24/7 Emergency Response</div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <div class="section-eyebrow">Why restaurants choose us</div>
+    <h2>Six Reasons <span class="red">Long Island Restaurants</span> Work With Deeno Fire Protection.</h2>
+  </div>
+  <div class="container" style="margin-top: 16px;">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <div class="why-title">NFPA 96 Compliant</div>
+        <div class="why-body">Every clean follows NFPA 96 and local AHJ rules. If you fail an inspection between cleanings, we come back free.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◷</div>
+        <div class="why-title">24-Hour Response</div>
+        <div class="why-body">Failed inspection or last-minute job? A crew on-site within 24 hours, nights and weekends included. No waiting, no runaround.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◉</div>
+        <div class="why-title">Photo Reports</div>
+        <div class="why-body">Before and after photos of every hood, duct, and fan. Time-stamped and sent the same day so you can forward to your insurer.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">$</div>
+        <div class="why-title">Fixed Quotes</div>
+        <div class="why-body">The price we quote is the price you pay. No surprise line items, no padded invoices. Period.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◆</div>
+        <div class="why-title">Bare Metal Clean</div>
+        <div class="why-body">We don't hang "inaccessible" tags. Every accessible surface gets cleaned to bare metal, including the back of your duct runs.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⬢</div>
+        <div class="why-title">Local Crew</div>
+        <div class="why-body">Based on Long Island. Every tech lives here, drives here, and knows every fire inspector from Garden City to Montauk.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-eyebrow">What we do</div>
+    <h2>Two Services. <span class="red">One Crew.</span></h2>
+    <p class="section-intro">Hood cleaning and filter exchange. The two services every Long Island commercial kitchen needs to stay in compliance, and the only two we do.</p>
+
+    <div class="svc-grid">
+      <div class="svc-card svc-1">
+        <div class="svc-img"><span class="tag">Primary</span></div>
+        <div class="svc-body">
+          <div class="svc-num">01</div>
+          <div class="svc-title">Hood Cleaning</div>
+          <div class="svc-desc">Full exhaust system cleaned to bare metal, from hood to rooftop fan. NFPA 96 compliant with complete photo documentation on every job.</div>
+        </div>
+      </div>
+      <div class="svc-card svc-2">
+        <div class="svc-img"><span class="tag">Scheduled</span></div>
+        <div class="svc-body">
+          <div class="svc-num">02</div>
+          <div class="svc-title">Filter Exchange</div>
+          <div class="svc-desc">Monthly or quarterly filter exchanges. Dirty filters swap out, clean ones go in. No downtime, no scrubbing in the back of house. Keeps your system in compliance between hood cleanings.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's Included -->
+    <div class="includes-block">
+      <div class="includes-title">Every Hood Cleaning Includes</div>
+      <div class="includes-grid">
+        <div class="include-item">Hood and Canopy Cleaning</div>
+        <div class="include-item">Rooftop Exhaust Fan Cleaning</div>
+        <div class="include-item">Plenum Cleaning</div>
+        <div class="include-item">Grease Containment and Safe Disposal</div>
+        <div class="include-item">Full Ductwork Cleaning</div>
+        <div class="include-item">Before and After Photo Documentation</div>
+        <div class="include-item">Hood Filter Cleaning</div>
+        <div class="include-item">Repairs to Maintain Compliance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area" id="area">
+  <div class="area-inner">
+    <div class="area-copy">
+      <div class="section-eyebrow">Service area</div>
+      <h2>All of <span class="red">Long Island.</span></h2>
+      <p class="area-sub">Every Long Island commercial kitchen is in our coverage zone. Same-day response west of Riverhead. 24-hour response on the East End and the Forks.</p>
+      <div class="area-counties">
+        <div class="area-county">Nassau County</div>
+        <div class="area-county">Suffolk County</div>
+      </div>
+      <div class="area-towns">
+        <span>▸</span> Garden City &nbsp; <span>▸</span> Hicksville &nbsp; <span>▸</span> Huntington<br>
+        <span>▸</span> Smithtown &nbsp; <span>▸</span> Babylon &nbsp; <span>▸</span> Patchogue<br>
+        <span>▸</span> Riverhead &nbsp; <span>▸</span> Southampton &nbsp; <span>▸</span> Montauk<br>
+        <span>▸</span> Greenport &nbsp; <span>▸</span> East Hampton &nbsp; <span>▸</span> Port Jefferson
+      </div>
+    </div>
+    <div class="area-photo">
+      <div class="area-photo-label">Long Island · Nassau + Suffolk Counties</div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba" id="work">
+  <div class="container">
+    <div class="section-eyebrow">Proof</div>
+    <h2>Before. <span class="red">After.</span> Every time.</h2>
+    <p class="section-intro">Photographic documentation on every job, sent to you the same day. Here's a handful of recent Long Island cleanings.</p>
+
+    <div class="ba-grid">
+      <div class="ba-item">
+        <div class="ba-pair">
+          <div class="ba-side ba-before"><span class="ba-label bfr">Before</span></div>
+          <div class="ba-side ba-after"><span class="ba-label aft">After</span></div>
+        </div>
+        <div class="ba-caption">
+          <span class="loc">Diner · Hicksville</span>
+        </div>
+      </div>
+    </div>
+    <p class="ba-note">[Stylized placeholder. Replace with a real before/after photo from a completed job.]</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test">
+  <div class="container">
+    <div class="section-eyebrow">What operators say</div>
+    <h2>Long Island Kitchens. <span class="red">Real Reviews.</span></h2>
+
+    <div class="test-grid" style="margin-top: 48px;">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-body">Our carrier was about to drop us because we couldn't produce a recent cleaning tag. Deeno was in the kitchen next morning, cleaned the whole system, and sent me the photo report before noon. Policy reinstated by end of week.</p>
+        <div class="test-attr"><strong>[Owner]</strong> · Diner, Hicksville</div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-body">Three hood vendors in five years, all three tagged our back duct run inaccessible. Deeno cleaned it on day one without drama. Quarterly schedule ever since.</p>
+        <div class="test-attr"><strong>[GM]</strong> · Tavern, Montauk</div>
+      </div>
+    </div>
+    <p class="ba-note" style="margin-top: 28px;">[Replace with real client quotes from Google or direct reviews.]</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container-sm">
+    <div class="section-eyebrow">Common questions</div>
+    <h2>Before You <span class="red">Book.</span></h2>
+
+    <details class="faq">
+      <summary>How often do I need to clean my hood?</summary>
+      <p>Depends on how you cook. Solid fuel (wood, charcoal) is monthly. High-volume or 24-hour kitchens are quarterly. Most Long Island sit-down restaurants are semi-annual. Low-volume operations like churches or schools are annual. These are the NFPA 96 minimums. Your insurance carrier may require more.</p>
+    </details>
+    <details class="faq">
+      <summary>What does a cleaning cost?</summary>
+      <p>Most single-hood Long Island kitchens fall between $450 and $850 per cleaning. Multi-hood kitchens and long duct runs run higher. We quote a fixed price after a free on-site inspection, so no surprises on the invoice.</p>
+    </details>
+    <details class="faq">
+      <summary>How long does it take?</summary>
+      <p>Most jobs run 3 to 6 hours. We schedule overnight or pre-open so your kitchen is ready when your first shift arrives. You shouldn't lose a single cover.</p>
+    </details>
+    <details class="faq">
+      <summary>What's included?</summary>
+      <p>Hood, plenum, filters, full accessible duct run, upblast fan, and rooftop containment. Plus before and after photos, a signed service report, and a dated NFPA tag on the hood.</p>
+    </details>
+    <details class="faq">
+      <summary>Can you handle emergencies?</summary>
+      <p>Yes. Failed inspections and last-minute cleanings get a 24-hour response anywhere on Long Island. We'll prioritize your job and get you back in compliance fast.</p>
+    </details>
+    <details class="faq">
+      <summary>Do you work with my insurance?</summary>
+      <p>Yes. Every clean comes with a signed service report and a dated metal tag. We send the documentation straight to you so you can forward to your carrier or fire marshal whenever they ask for it.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="quote">
+  <div class="container final-inner">
+    <div class="section-eyebrow">Free inspection · No obligation</div>
+    <h2>Book Your Free Estimate.</h2>
+    <p class="final-sub">A tech comes to your kitchen, inspects your full exhaust system, and gives you a written quote and compliance check. No cost. No pressure.</p>
+    <div class="final-ctas">
+      <a href="tel:+16315214302" class="btn-final-dark">Call (631) 521-4302</a>
+      <a href="#" class="btn-final-outline">Request an estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand-block">
+        <div class="brand-name">Deeno <span style="color: var(--red);">Fire Protection</span></div>
+        <span class="brand-tag">NFPA 96 · Hood Cleaning · Fire Protection</span>
+        <p>Long Island's hood cleaning and fire protection company. Nassau and Suffolk only. We live here, work here, and know every fire inspector on the island.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">Hood Cleaning</a>
+        <a href="#services">Filter Exchange</a>
+        <a href="#area">Service Area</a>
+        <a href="#quote">Free Estimate</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+16315214302">(631) 521-4302</a>
+        <a href="mailto:hello@deenofire.com">hello@deenofire.com</a>
+        <a href="#area">Nassau + Suffolk</a>
+        <a href="#quote">Free Estimate</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 DEENO FIRE PROTECTION · NY LICENSE #[XXXXXX] · NFPA 96 COMPLIANT</div>
+      <div>Site by Deeno Brands</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('section h2, .why-card, .svc-card, .test-card, details.faq, .ba-item').forEach(el => {
+    el.classList.add('fade-up');
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
