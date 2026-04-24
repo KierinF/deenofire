@@ -202,13 +202,13 @@
   }
   .hero-bg {
     position: absolute;
-    inset: 0;
+    top: 0; right: 0; bottom: 0;
+    left: 50%;
     background-image:
-      linear-gradient(90deg, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.65) 55%, rgba(26,26,26,0.35) 100%),
-      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #0f0f0f 100%),
-      url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=2000');
+      linear-gradient(90deg, var(--black) 0%, rgba(26,26,26,0.75) 12%, rgba(26,26,26,0.25) 32%, transparent 55%),
+      url('images/hero-cleaning.png');
     background-size: cover;
-    background-position: center right;
+    background-position: center;
   }
   .hero .container { position: relative; z-index: 1; width: 100%; }
   .hero-eyebrow {
@@ -229,13 +229,13 @@
     background: var(--red);
   }
   h1.hero-title {
-    font-size: clamp(48px, 7vw, 96px);
+    font-size: clamp(40px, 5.5vw, 76px);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: -0.01em;
     line-height: 0.95;
     margin-bottom: 24px;
-    max-width: 900px;
+    max-width: 580px;
   }
   h1.hero-title .red { color: var(--red); }
   .hero-sub {
@@ -273,6 +273,14 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     border-left: 4px solid var(--red);
+  }
+  @media (max-width: 860px) {
+    .hero-bg {
+      left: 0;
+      background-image:
+        linear-gradient(180deg, rgba(26,26,26,0.88) 0%, rgba(26,26,26,0.7) 60%, rgba(26,26,26,0.85) 100%),
+        url('images/hero-cleaning.png');
+    }
   }
   @media (max-width: 760px) {
     .hero-badges { display: none; }
