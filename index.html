@@ -120,6 +120,8 @@
     text-transform: uppercase;
   }
   .brand-name span { color: var(--red); }
+  .brand-logo { height: 54px; width: auto; display: block; }
+  @media (max-width: 560px) { .brand-logo { height: 44px; } }
   .brand-tag {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
@@ -607,31 +609,10 @@
     overflow: hidden;
   }
   .ba-before {
-    background:
-      radial-gradient(circle at 30% 40%, #4a3220 0%, #2a1e14 60%, #1a1208 100%);
-  }
-  .ba-before::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 30px 50px at 25% 30%, rgba(0,0,0,0.7) 0%, transparent 55%),
-      radial-gradient(ellipse 45px 30px at 65% 55%, rgba(0,0,0,0.6) 0%, transparent 55%),
-      radial-gradient(ellipse 20px 35px at 45% 75%, rgba(0,0,0,0.5) 0%, transparent 55%),
-      radial-gradient(ellipse 35px 20px at 80% 25%, rgba(0,0,0,0.6) 0%, transparent 55%),
-      radial-gradient(ellipse 25px 40px at 15% 70%, rgba(0,0,0,0.5) 0%, transparent 55%);
+    background: url('images/ba-before.webp') center/cover no-repeat;
   }
   .ba-after {
-    background:
-      linear-gradient(135deg, #C4BCA8 0%, #E8E2D0 45%, #A69D88 100%);
-  }
-  .ba-after::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 45%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0.35) 55%, transparent 100%),
-      repeating-linear-gradient(45deg, transparent 0 8px, rgba(0,0,0,0.04) 8px 9px);
+    background: url('images/ba-after.png') center/cover no-repeat;
   }
   .ba-label {
     position: absolute;
@@ -972,6 +953,7 @@
     margin-bottom: 32px;
   }
   .foot-brand-block .brand-name { color: var(--cream); font-size: 28px; }
+  .foot-logo { width: 220px; height: auto; display: block; margin-bottom: 4px; }
   .foot-brand-block .brand-tag { color: var(--yellow); margin-top: 6px; font-size: 11px; }
   .foot-brand-block p { color: #9A968A; margin-top: 14px; max-width: 320px; line-height: 1.5; }
   .foot-col h4 {
@@ -1021,10 +1003,7 @@
 <nav>
   <div class="container">
     <a href="#" class="brand">
-      <div class="brand-mark">D</div>
-      <div>
-        <div class="brand-name">Deeno <span>Fire Protection</span></div>
-      </div>
+      <img src="images/logo.png" alt="Deeno Fire Protection" class="brand-logo">
     </a>
     <div class="nav-links">
       <a href="#services">Services</a>
@@ -1326,7 +1305,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand-block">
-        <div class="brand-name">Deeno <span style="color: var(--red);">Fire Protection</span></div>
+        <img src="images/logo.png" alt="Deeno Fire Protection" class="foot-logo">
         <span class="brand-tag">NFPA 96 · Hood Cleaning · Fire Protection</span>
         <p>Long Island's hood cleaning and fire protection company. Nassau and Suffolk only. We live here, work here, and know every fire inspector on the island.</p>
       </div>
