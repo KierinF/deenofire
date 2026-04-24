@@ -818,6 +818,160 @@
   }
   .btn-final-outline:hover { background: var(--cream); color: var(--black) !important; }
 
+  /* ----- FINAL FORM ----- */
+  .final-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    text-align: left;
+  }
+  .final-left h2 { color: var(--cream); font-size: clamp(36px, 5vw, 58px); margin-bottom: 20px; }
+  .final-left .final-sub { margin: 0 0 28px; max-width: none; text-align: left; }
+  .final-left .phone-callout {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--black);
+    padding: 14px 22px;
+    text-decoration: none;
+    border: 2px solid var(--black);
+  }
+  .final-left .phone-callout .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--yellow);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .final-left .phone-callout .num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+  }
+  .final-left .phone-callout:hover { background: var(--cream); }
+  .final-left .phone-callout:hover .num { color: var(--black); }
+
+  .form-card {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    padding: 36px 32px;
+    box-shadow: 8px 8px 0 var(--black);
+  }
+  .form-card-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--black);
+    margin-bottom: 6px;
+  }
+  .form-card-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-field label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--black);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    padding: 12px 14px;
+    background: var(--cream);
+    border: 2px solid var(--black);
+    color: var(--black);
+    border-radius: 0;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-field textarea { resize: vertical; min-height: 90px; font-family: 'DM Sans', sans-serif; }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--red);
+    background: #fff;
+  }
+  .form-field select {
+    background-image: linear-gradient(45deg, transparent 50%, var(--black) 50%), linear-gradient(135deg, var(--black) 50%, transparent 50%);
+    background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--red);
+    color: var(--cream);
+    border: 2px solid var(--black);
+    padding: 16px 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--red-dark); }
+  .form-fineprint {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--grey);
+    letter-spacing: 0.05em;
+    margin-top: 14px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .form-success {
+    display: none;
+    padding: 24px;
+    background: var(--black);
+    color: var(--cream);
+    border: 2px solid var(--black);
+    text-align: center;
+  }
+  .form-success.show { display: block; }
+  .form-success strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--yellow);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 860px) {
+    .final-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-card { padding: 28px 22px; box-shadow: 6px 6px 0 var(--black); }
+  }
+
   /* ----- FOOTER ----- */
   footer {
     background: var(--black);
@@ -903,7 +1057,7 @@
   <div class="container">
     <div class="hero-eyebrow">Serving Nassau & Suffolk</div>
     <h1 class="hero-title">Hood Cleaning.<br><span class="red">Done Right.</span></h1>
-    <p class="hero-sub">Commercial hood cleaning and fire protection for Long Island restaurants. We clean to NFPA 96, document every job with photos and a signed report, and show up when we say we will.</p>
+    <p class="hero-sub">Commercial hood cleaning for Long Island restaurants. We clean to NFPA 96, document every job with photos and a signed report, and show up when we say we will.</p>
     <div class="hero-ctas">
       <a href="#quote" class="btn-solid">Get a free estimate</a>
       <a href="tel:+16315214302" class="btn-outline">Call now</a>
@@ -1000,7 +1154,6 @@
         <div class="include-item">Full Ductwork Cleaning</div>
         <div class="include-item">Before and After Photo Documentation</div>
         <div class="include-item">Hood Filter Cleaning</div>
-        <div class="include-item">Repairs to Maintain Compliance</div>
       </div>
     </div>
   </div>
@@ -1035,7 +1188,7 @@
   <div class="container">
     <div class="section-eyebrow">Proof</div>
     <h2>Before. <span class="red">After.</span> Every time.</h2>
-    <p class="section-intro">Photographic documentation on every job, sent to you the same day. Here's a handful of recent Long Island cleanings.</p>
+    <p class="section-intro">Photographic documentation on every job, sent to you the same day.</p>
 
     <div class="ba-grid">
       <div class="ba-item">
@@ -1048,29 +1201,6 @@
         </div>
       </div>
     </div>
-    <p class="ba-note">[Stylized placeholder. Replace with a real before/after photo from a completed job.]</p>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="test">
-  <div class="container">
-    <div class="section-eyebrow">What operators say</div>
-    <h2>Long Island Kitchens. <span class="red">Real Reviews.</span></h2>
-
-    <div class="test-grid" style="margin-top: 48px;">
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p class="test-body">Our carrier was about to drop us because we couldn't produce a recent cleaning tag. Deeno was in the kitchen next morning, cleaned the whole system, and sent me the photo report before noon. Policy reinstated by end of week.</p>
-        <div class="test-attr"><strong>[Owner]</strong> · Diner, Hicksville</div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p class="test-body">Three hood vendors in five years, all three tagged our back duct run inaccessible. Deeno cleaned it on day one without drama. Quarterly schedule ever since.</p>
-        <div class="test-attr"><strong>[GM]</strong> · Tavern, Montauk</div>
-      </div>
-    </div>
-    <p class="ba-note" style="margin-top: 28px;">[Replace with real client quotes from Google or direct reviews.]</p>
   </div>
 </section>
 
@@ -1107,18 +1237,108 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- FINAL FORM -->
 <section class="final" id="quote">
   <div class="container final-inner">
-    <div class="section-eyebrow">Free inspection · No obligation</div>
-    <h2>Book Your Free Estimate.</h2>
-    <p class="final-sub">A tech comes to your kitchen, inspects your full exhaust system, and gives you a written quote and compliance check. No cost. No pressure.</p>
-    <div class="final-ctas">
-      <a href="tel:+16315214302" class="btn-final-dark">Call (631) 521-4302</a>
-      <a href="#" class="btn-final-outline">Request an estimate</a>
+    <div class="final-grid">
+      <div class="final-left">
+        <div class="section-eyebrow">Free inspection · No obligation</div>
+        <h2>Book Your Free Estimate.</h2>
+        <p class="final-sub">A tech comes to your kitchen, inspects your full exhaust system, and gives you a written quote and compliance check. No cost. No pressure.</p>
+        <a href="tel:+16315214302" class="phone-callout">
+          <span>
+            <span class="label">Or call us</span><br>
+            <span class="num">(631) 521-4302</span>
+          </span>
+        </a>
+      </div>
+
+      <div>
+        <form id="estimate-form" class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-card-title">Request an estimate</div>
+          <div class="form-card-sub">We respond same-day</div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+              <label for="business">Restaurant / Business</label>
+              <input type="text" id="business" name="business" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="town">Town</label>
+              <input type="text" id="town" name="town" placeholder="e.g. Hicksville" required>
+            </div>
+            <div class="form-field">
+              <label for="hoods">Number of hoods</label>
+              <select id="hoods" name="hoods">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4 or more</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="notes">Anything we should know? (optional)</label>
+            <textarea id="notes" name="notes" placeholder="Type of cuisine, last cleaning date, urgency, etc."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Send Request</button>
+          <div class="form-fineprint">We never share your info. Estimates are free.</div>
+        </form>
+
+        <div id="form-success" class="form-success">
+          <strong>Got it.</strong>
+          We'll be in touch shortly. For urgent jobs, call (631) 521-4302.
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    const form = document.getElementById('estimate-form');
+    const success = document.getElementById('form-success');
+    if (!form) return;
+    form.addEventListener('submit', async function (e) {
+      if (form.action.includes('YOUR_FORM_ID')) return;
+      e.preventDefault();
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.classList.add('show');
+        }
+      } catch (err) {
+        form.submit();
+      }
+    });
+  })();
+</script>
 
 <!-- FOOTER -->
 <footer>
